@@ -61,7 +61,7 @@ namespace WebApplication.Controllers
                     ModelState.AddModelError("", "Пользователь с данным логином уже существует");
                 }
             }
-            return System.Web.UI.WebControls.View(model);
+            return View(model);
         }
 
         public ActionResult Login()
@@ -88,7 +88,7 @@ namespace WebApplication.Controllers
             FormsAuthentication.SetAuthCookie(userName, rememberMe);
             if (Url.IsLocalUrl(returnUrl))
                 return Redirect(returnUrl);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Game");
         }
 
         public ActionResult LogOff()
